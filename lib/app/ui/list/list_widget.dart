@@ -60,9 +60,9 @@ class _Body extends StatelessWidget{
       child: ListTile(
         title: Padding(
           padding: const EdgeInsets.only(bottom: 16.0),
-          child: Text(listItem.name, style: const TextStyle(fontSize: 18.0)),
+          child: Text(listItem.title, style: const TextStyle(fontSize: 18.0)),
         ),
-        subtitle: Text(listItem.category),
+        subtitle: Text(listItem.subtitle),
         onTap: () {
           Navigator.of(context).pushNamed(Routes.apiDetail, arguments: listItem);
         },

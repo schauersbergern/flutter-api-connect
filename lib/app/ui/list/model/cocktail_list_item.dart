@@ -4,22 +4,20 @@ import 'package:api_connector/app/network/model/api_list_response.dart';
 class CocktailListItem extends ApiListItem {
 
   final String id;
-  final String name;
-  final String category;
-  final bool alcoholic;
+  final String title;
+  final String subtitle;
   final String image;
   final String instructions;
   final String ingredients;
 
   CocktailListItem(
       this.id,
-      this.name,
-      this.category,
-      this.alcoholic,
+      this.title,
+      this.subtitle,
       this.image,
       this.instructions,
       this.ingredients
-      ) : super(id, name,category, alcoholic, image, instructions, ingredients);
+      ) : super(id, title,subtitle, image, instructions, ingredients);
 
 
   static ApiListItem fromDto(NetworkCocktail dto) {
@@ -43,7 +41,6 @@ class CocktailListItem extends ApiListItem {
         dto.id,
         dto.name,
         dto.category,
-        alcoholic,
         dto.image,
         dto.instructions,
         ingredients

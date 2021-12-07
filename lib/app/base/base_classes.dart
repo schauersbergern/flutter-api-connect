@@ -8,14 +8,13 @@ abstract class ApiResponse extends ResponseBase {
 class ApiListItem {
 
   final String id;
-  final String name;
-  final String category;
-  final bool alcoholic;
+  final String title;
+  final String subtitle;
   final String image;
   final String instructions;
   final String ingredients;
 
-  ApiListItem(this.id, this.name, this.category, this.alcoholic, this.image, this.instructions, this.ingredients);
+  ApiListItem(this.id, this.title, this.subtitle, this.image, this.instructions, this.ingredients);
 
   static ApiListItem fromDto(NetworkCocktail dto) {}
 }

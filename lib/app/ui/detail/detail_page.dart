@@ -10,7 +10,7 @@ class DetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text(listItem.name)),
+        appBar: AppBar(title: Text(listItem.title)),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -38,12 +38,12 @@ class DetailPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            listItem.name,
+            listItem.title,
             style:
             Theme.of(context).textTheme.subtitle2?.copyWith(fontSize: 24),
           ),
           Text(
-            listItem.category,
+            listItem.subtitle,
             style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w300),
           )
         ],
