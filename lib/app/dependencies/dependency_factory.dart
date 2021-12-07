@@ -10,7 +10,7 @@ typedef BlocCreator<T> = T Function(BuildContext context);
 
 abstract class BaseDependencyFactory {
   Dio createDio(BuildContext context);
-  CocktailNetworkService createNetworkService(BuildContext context);
+  NetworkService createNetworkService(BuildContext context);
   BlocCreator<ApiListBloc> get apiListBlocCreator;
 }
 
@@ -25,13 +25,13 @@ class DependencyFactory extends BaseDependencyFactory {
   }
 
   @override
-  CocktailNetworkService createNetworkService(BuildContext context) {
-    return CocktailNetworkService(context.read<Dio>());
+  NetworkService createNetworkService(BuildContext context) {
+    return NetworkService(context.read<Dio>());
   }
 
 
   @override
   BlocCreator<ApiListBloc> get apiListBlocCreator =>
-          (BuildContext context) => ApiListBloc(context.read<CocktailNetworkService>());
+          (BuildContext context) => ApiListBloc(context.read<NetworkService>());
 
 }

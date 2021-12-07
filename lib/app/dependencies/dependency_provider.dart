@@ -20,7 +20,7 @@ class DependencyProvider extends StatelessWidget {
     return MultiRepositoryProvider(
       providers: [
         RepositoryProvider<Dio>(create: dependencyFactory.createDio),
-        RepositoryProvider<CocktailNetworkService>(
+        RepositoryProvider<NetworkService>(
           create: dependencyFactory.createNetworkService,
         ),
         RepositoryProvider<BlocCreator<ApiListBloc>>(

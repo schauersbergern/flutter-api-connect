@@ -4,17 +4,16 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'api_list_response.g.dart';
 
-
 @JsonSerializable(createToJson: false)
-class NetworkCocktailResponse extends ApiListResponse {
+class NetworkResponse extends ResponseBase {
   @JsonKey(name: 'drinks', defaultValue: <NetworkCocktail>[])
   final List<NetworkCocktail> cocktails;
 
-  NetworkCocktailResponse({
+  NetworkResponse({
     this.cocktails,
   });
 
-  factory NetworkCocktailResponse.fromJson(json) => _$NetworkCocktailResponseFromJson(json);
+  factory NetworkResponse.fromJson(json) => _$NetworkCocktailResponseFromJson(json);
 }
 
 @JsonSerializable(createToJson: false)

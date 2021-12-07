@@ -6,9 +6,9 @@ part of 'api_list_response.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-NetworkCocktailResponse _$NetworkCocktailResponseFromJson(
+NetworkResponse _$NetworkCocktailResponseFromJson(
     Map<String, dynamic> json) {
-  return NetworkCocktailResponse(
+  return NetworkResponse(
     cocktails: (json['drinks'] as List)
             ?.map((e) => e == null ? null : NetworkCocktail.fromJson(e))
             ?.toList() ??

@@ -20,13 +20,10 @@ class CocktailListItem extends ApiListItem {
       this.image,
       this.instructions,
       this.ingredients
-      );
+      ) : super(id, name,category, alcoholic, image, instructions, ingredients);
 
-  factory CocktailListItem.empty() {
-    return CocktailListItem('', '', '', false, '', '', '');
-  }
 
-  factory CocktailListItem.fromDto(NetworkCocktail dto) {
+  static CocktailListItem fromDto(NetworkCocktail dto) {
 
     bool alcoholic = true;
 

@@ -26,7 +26,7 @@ class _ListPageState extends State<ListPage> {
         //TODO
         title: Text('CockTails'),
       ),
-      body: CocktailsList()
+      body: ListWidget()
     );
   }
 

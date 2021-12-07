@@ -12,7 +12,7 @@ part 'api_list_state.dart';
 
 class ApiListBloc extends Bloc<ApiListEvent, ApiListState> {
 
-  CocktailNetworkService networkService;
+  NetworkService networkService;
 
   ApiListBloc(this.networkService, {ApiListState initialState})
       : super(initialState ?? ApiListIdle()) {
@@ -30,7 +30,7 @@ class ApiListBloc extends Bloc<ApiListEvent, ApiListState> {
   }
 
   Future<List<ApiListItem>> _fetchApiList() async {
-    final response = await networkService.getApiList(DrinksListRequest());
+    final response = await networkService.getApiList(ListRequest());
 
     List<CocktailListItem> items = [];
 
