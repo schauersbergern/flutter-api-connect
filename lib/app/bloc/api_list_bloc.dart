@@ -32,7 +32,7 @@ class ApiListBloc extends Bloc<ApiListEvent, ApiListState> {
   Future<List<ApiListItem>> _fetchApiList() async {
     final response = await networkService.getApiList(ListRequest());
 
-    List<CocktailListItem> items = [];
+    List<ApiListItem> items = [];
 
     for (var cocktail in response.cocktails) {
       items.add(CocktailListItem.fromDto(cocktail));

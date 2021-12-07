@@ -1,6 +1,6 @@
+import 'package:api_connector/app/base/base_classes.dart';
 import 'package:api_connector/app/bloc/api_list_bloc.dart';
 import 'package:api_connector/app/routes/routes.dart';
-import 'package:api_connector/app/ui/list/model/cocktail_list_item.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -38,7 +38,7 @@ class ListWidget extends StatelessWidget {
 
 class _Body extends StatelessWidget{
 
-  final List<CocktailListItem> items;
+  final List<ApiListItem> items;
 
   const _Body({Key key, @required this.items})
       : assert(items != null),
@@ -54,25 +54,25 @@ class _Body extends StatelessWidget{
         });
   }
 
-  Widget _buildRow(CocktailListItem cocktail, BuildContext context) {
+  Widget _buildRow(ApiListItem listItem, BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: ListTile(
         title: Padding(
           padding: const EdgeInsets.only(bottom: 16.0),
-          child: Text(cocktail.name, style: const TextStyle(fontSize: 18.0)),
+          child: Text(listItem.name, style: const TextStyle(fontSize: 18.0)),
         ),
-        subtitle: Text(cocktail.category),
+        subtitle: Text(listItem.category),
         onTap: () {
-          Navigator.of(context).pushNamed(Routes.apiDetail, arguments: cocktail);
+          Navigator.of(context).pushNamed(Routes.apiDetail, arguments: listItem);
         },
         trailing: Hero(
-          tag: 'cardArtwork-${cocktail.id}',
+          tag: 'cardArtwork-${listItem.id}',
           transitionOnUserGestures: true,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(8.0),
             child: Image.network(
-              cocktail.image,
+              listItem.image,
             ),
           ),
         ),

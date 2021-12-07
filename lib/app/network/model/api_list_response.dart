@@ -1,4 +1,3 @@
-import 'package:api_connector/app/base/base_classes.dart';
 import 'package:http_services/http_services.dart';
 import 'package:json_annotation/json_annotation.dart';
 

@@ -1,16 +1,16 @@
-import 'package:api_connector/app/ui/list/model/cocktail_list_item.dart';
+import 'package:api_connector/app/base/base_classes.dart';
 import 'package:flutter/material.dart';
 import 'image_container.dart';
 
 class DetailPage extends StatelessWidget {
-  const DetailPage({Key key, this.cockTail}) : super(key: key);
+  const DetailPage({Key key, this.listItem}) : super(key: key);
 
-  final CocktailListItem cockTail;
+  final ApiListItem listItem;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text(cockTail.name)),
+        appBar: AppBar(title: Text(listItem.name)),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
@@ -23,10 +23,10 @@ class DetailPage extends StatelessWidget {
 
   Widget _buildBanner() {
     return Hero(
-      tag: 'cardArtwork-${cockTail.id}',
+      tag: 'cardArtwork-${listItem.id}',
       child: ImageContainer(
         height: 200,
-        url: cockTail.image,
+        url: listItem.image,
       ),
     );
   }
@@ -38,12 +38,12 @@ class DetailPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            cockTail.name,
+            listItem.name,
             style:
             Theme.of(context).textTheme.subtitle2?.copyWith(fontSize: 24),
           ),
           Text(
-            cockTail.category,
+            listItem.category,
             style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w300),
           )
         ],
@@ -61,11 +61,11 @@ class DetailPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            cockTail.ingredients,
+            listItem.ingredients,
             style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w300),
           ),
           Text(
-            cockTail.instructions,
+            listItem.instructions,
             style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w300),
           )
         ],

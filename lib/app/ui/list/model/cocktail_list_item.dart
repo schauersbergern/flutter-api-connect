@@ -1,4 +1,3 @@
-
 import 'package:api_connector/app/base/base_classes.dart';
 import 'package:api_connector/app/network/model/api_list_response.dart';
 
@@ -23,7 +22,7 @@ class CocktailListItem extends ApiListItem {
       ) : super(id, name,category, alcoholic, image, instructions, ingredients);
 
 
-  static CocktailListItem fromDto(NetworkCocktail dto) {
+  static ApiListItem fromDto(NetworkCocktail dto) {
 
     bool alcoholic = true;
 
