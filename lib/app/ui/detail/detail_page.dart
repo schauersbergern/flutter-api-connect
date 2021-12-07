@@ -40,11 +40,11 @@ class DetailPage extends StatelessWidget {
           Text(
             listItem.title,
             style:
-            Theme.of(context).textTheme.subtitle2?.copyWith(fontSize: 24),
+            Theme.of(context).textTheme.headline1?.copyWith(fontSize: 24),
           ),
           Text(
             listItem.subtitle,
-            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w300),
+            style: Theme.of(context).textTheme.subtitle1?.copyWith(fontSize: 20),
           )
         ],
       ),
@@ -52,7 +52,6 @@ class DetailPage extends StatelessWidget {
   }
 
   Widget _buildDetails(BuildContext context) {
-    const style = TextStyle(fontSize: 16.0);
 
     return Padding(
       padding: const EdgeInsets.only(left: 10),
@@ -61,12 +60,8 @@ class DetailPage extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Text(
-            listItem.ingredients,
-            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w300),
-          ),
-          Text(
-            listItem.instructions,
-            style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w300),
+            listItem.detailText,
+            style: Theme.of(context).textTheme.bodyText1?.copyWith(fontSize: 16),
           )
         ],
       ),

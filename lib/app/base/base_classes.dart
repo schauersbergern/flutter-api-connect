@@ -11,10 +11,9 @@ class ApiListItem {
   final String title;
   final String subtitle;
   final String image;
-  final String instructions;
-  final String ingredients;
+  final String detailText;
 
-  ApiListItem(this.id, this.title, this.subtitle, this.image, this.instructions, this.ingredients);
+  ApiListItem(this.id, this.title, this.subtitle, this.image, this.detailText);
 
   static ApiListItem fromDto(NetworkCocktail dto) {}
 }
