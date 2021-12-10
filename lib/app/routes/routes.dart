@@ -1,4 +1,3 @@
-import 'package:api_connector/app/ui/list/model/cocktail_list_item.dart';
 import 'package:flutter/material.dart';
 
 import 'handlers/detail_route_handler.dart';

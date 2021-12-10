@@ -17,7 +17,6 @@ class _ApiAppState extends State<ApiApp> {
       child: Builder(
         builder: (context) => MaterialApp(
           themeMode: ThemeMode.system,
-          title: 'Todo',
           onGenerateRoute: (settings) =>
               Routes.onGenerateRoute(settings, context),
         ),

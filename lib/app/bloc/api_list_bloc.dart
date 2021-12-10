@@ -20,17 +20,20 @@ class ApiListBloc extends Bloc<ApiListEvent, ApiListState> {
       if (event is FetchListEvent) {
         try {
           emit(ApiListLoading());
-          final model = await _fetchApiList();
-          emit(ApiListLoaded(model));
+          final model = await _fetchApiList(event.filterValue);
+          emit(ApiListLoaded(model, event.filterValue));
         } catch (e) {
           emit(ApiLoadingError(e.toString()));
         }
+      } else if (event is FilterChanged) {
+        final model = await _fetchApiList(event.filterValue);
+        emit(ApiListLoaded(model, event.filterValue));
       }
     });
   }
 
-  Future<List<ApiListItem>> _fetchApiList() async {
-    final response = await networkService.getApiList(ListRequest());
+  Future<List<ApiListItem>> _fetchApiList(String filter) async {
+    final response = await networkService.getApiList(ListRequest(filter));
 
     List<ApiListItem> items = [];
 
@@ -39,6 +42,12 @@ class ApiListBloc extends Bloc<ApiListEvent, ApiListState> {
     }
 
     return items;
+  }
+
+  @override
+  Future<void> close() {
+    networkService.dispose();
+    return super.close();
   }
 }
 

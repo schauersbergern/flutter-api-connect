@@ -11,8 +11,9 @@ class ApiListLoading extends ApiListState {}
 
 class ApiListLoaded extends ApiListState {
   final List<ApiListItem> items;
+  final String filterValue;
 
-  ApiListLoaded(this.items);
+  ApiListLoaded(this.items, this.filterValue);
 }
 
 class ApiLoadingError extends ApiListState {
